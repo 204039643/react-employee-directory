@@ -8,7 +8,7 @@ const Home = () => {
   const [results, setResults] = useState([])
   useEffect(() => {
     axios
-      .get('https://randomuser.me/api/?results=10')
+      .get('https://randomuser.me/api/?results=20')
       .then(function (response) {
         // handle success
         setResults(response.data.results)
