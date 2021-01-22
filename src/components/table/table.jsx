@@ -2,7 +2,8 @@ import React from 'react'
 
 const Table = () => {
   return (
-    <div className="text-center">
+    <div>
+      <br/>
       <table>
         <thead>
           <tr>
@@ -10,7 +11,6 @@ const Table = () => {
             <th>Name</th>
             <th>Location</th>
             <th>Email</th>
-            <th>ID #</th>
           </tr>
         </thead>
       </table>

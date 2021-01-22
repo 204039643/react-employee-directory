@@ -3,6 +3,7 @@ import Table from '../components/table/table'
 import Row from '../components/row/row'
 import axios from 'axios'
 
+
 const Home = () => {
   const [results, setResults] = useState([])
   useEffect(() => {
@@ -10,9 +11,7 @@ const Home = () => {
       .get('https://randomuser.me/api/?results=10')
       .then(function (response) {
         // handle success
-        let fullName = `${response.data.results[0].name.first} ${response.data.results[0].name.last}`
-        console.log(fullName)
-        setResults(response.data.results[0])
+        setResults(response.data.results)
       })
       .catch(function (error) {
         // handle error
@@ -25,7 +24,11 @@ const Home = () => {
       {results.map(result => (
         <Row 
         key={result._id}
-        firstName={result.data.results[0].name} />
+        imageURL={result.picture.thumbnail}
+        firstName={result.name.first}
+        lastName={result.name.last}
+        location={result.location.country}
+        email={result.email}/>
       ))}
     </div>
   )
