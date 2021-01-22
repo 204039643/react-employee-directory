@@ -22,7 +22,7 @@ const Home = () => {
     <div>
       <Table />
       {results.map(result => (
-        <Row 
+        <Row
         key={result._id}
         imageURL={result.picture.thumbnail}
         firstName={result.name.first}
