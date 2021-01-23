@@ -7,11 +7,9 @@ const Table = (props) => {
       <br />
       <div className='row'>
         <div className='col s6 centered'>
-          <a className='waves-effect waves-light btn' 
-          onClick={props.handleSort}
-          >
-            <i className='material-icons left'>sort_by_alpha</i>Sort by Name
-         </a>
+        <a className='waves-effect waves-light btn-small'
+          onClick={props.handleSort}>
+            <i className='material-icons'>sort_by_alpha</i>  Sort Last Name</a>
         </div>
         <form className='col s6 centered'>
           <div className='input-field col s6'>

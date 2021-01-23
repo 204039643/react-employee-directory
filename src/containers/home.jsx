@@ -4,7 +4,6 @@ import Row from '../components/row/row'
 import Navbar from '../components/navbar/navbar'
 import axios from 'axios'
 
-
 const Home = () => {
   const [results, setResults] = useState([])
   const [sortedResults, setSortedResults] = useState([])
@@ -24,34 +23,40 @@ const Home = () => {
   }, [])
 
   function handleSort () {
-    // console.log(“clicked button”);
-    const sortedEmployees = results.sort((a, b) => {
-      return a.nat < b.nat ? -1 : 1
-    })
-    console.log(sortedEmployees);
-    setSortedResults(sortedEmployees)
-}
+    console.log('clicked button')
+    function compare (a, b) {
+      if (a.email < b.email) {
+        return -1
+      }
+      if (a.email > b.email) {
+        return 1
+      }
+      return 0
+    }
+    results.sort(compare)
+    console.log(results)
+    setSortedResults(results)
+  }
 
-//   handleFilter = (event) => {
-//     // Getting the value and name of the input which triggered the change
-//     const { name, value } = target;
-//     const filteredEmployees = this.state.employees.filter((employee) => {
-//       return (
-//         employee.name.first.includes(value) ||
-//         employee.name.last.includes(value)
-//       );
-//     });
-//     this.setState({
-//       [name]: value,
-//       filteredEmployees: filteredEmployees,
-//     });
-//   };
+  //   handleFilter = (event) => {
+  //     // Getting the value and name of the input which triggered the change
+  //     const { name, value } = target;
+  //     const filteredEmployees = this.state.employees.filter((employee) => {
+  //       return (
+  //         employee.name.first.includes(value) ||
+  //         employee.name.last.includes(value)
+  //       );
+  //     });
+  //     this.setState({
+  //       [name]: value,
+  //       filteredEmployees: filteredEmployees,
+  //     });
+  //   };
 
   return (
     <div>
       <Navbar />
-      <Table 
-      handleSort = {handleSort}/>
+      <Table handleSort={handleSort} />
       {sortedResults.map(result => (
         <Row
           key={result.login.uuid}
@@ -63,8 +68,7 @@ const Home = () => {
         />
       ))}
     </div>
-      )
+  )
 }
-
 
 export default Home

@@ -4,8 +4,8 @@ const navbar = () => {
   return (
     <div>
       <nav>
-        <div class='nav-wrapper blue lighten-3'>
-          <a href='#' class='brand-logo center'>
+        <div className='nav-wrapper blue lighten-3'>
+          <a href='/' className='brand-logo center'>
             React Employee Directory
           </a>
         </div>
