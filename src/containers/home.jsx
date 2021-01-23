@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Table from '../components/table/table'
 import Row from '../components/row/row'
+import Navbar from '../components/navbar/navbar'
 import axios from 'axios'
 
 
@@ -48,6 +49,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar />
       <Table 
       handleSort = {handleSort}/>
       {sortedResults.map(result => (
