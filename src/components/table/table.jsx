@@ -1,14 +1,17 @@
 import React from 'react'
 
-const Table = () => {
+
+const Table = (props) => {
   return (
     <div>
       <br />
       <div className='row'>
         <div className='col s6 centered'>
-          <a className='waves-effect waves-light btn'>
+          <a className='waves-effect waves-light btn' 
+          onClick={props.handleSort}
+          >
             <i className='material-icons left'>sort_by_alpha</i>Sort by Name
-          </a>
+         </a>
         </div>
         <form className='col s6 centered'>
           <div className='input-field col s6'>
