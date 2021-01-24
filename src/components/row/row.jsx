@@ -1,21 +1,18 @@
 import React from 'react'
 
-const Row = ({ imageURL, firstName, lastName, location, email }) => {
+const Row = ({ imageURL, firstName, lastName, location, email, gender}) => {
   return (
-    <table>
-      <tbody>
         <tr>
           <td>
             <img src={imageURL} alt='employee thumbnail' />
           </td>
-          <td className='tdCSS'>
+          <td>
             {firstName} {lastName}
           </td>
-          <td className='tdCSS'>{location}</td>
-          <td className='tdCSS'>{email}</td>
+          <td>{location}</td>
+          <td>{email}</td>
+          <td>{gender}</td>
         </tr>
-      </tbody>
-    </table>
   )
 }
 

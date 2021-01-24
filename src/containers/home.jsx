@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Table from '../components/table/table'
-import Row from '../components/row/row'
 import Navbar from '../components/navbar/navbar'
 import axios from 'axios'
 
@@ -38,6 +37,13 @@ const Home = () => {
     setSortedResults(results)
   }
 
+  // const handleSort = (event) => {
+  //   const sortEmployee = [...results];
+  //   const sortedEmployees = sortEmployee.sort((a,b) => (a.email > b.email ? 1 : -1))
+  //   setResults(sortedEmployees);
+  //   console.log(results)
+  // };
+
   //   handleFilter = (event) => {
   //     // Getting the value and name of the input which triggered the change
   //     const { name, value } = target;
@@ -56,17 +62,9 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Table handleSort={handleSort} />
-      {sortedResults.map(result => (
-        <Row
-          key={result.login.uuid}
-          imageURL={result.picture.thumbnail}
-          firstName={result.name.first}
-          lastName={result.name.last}
-          location={result.location.country}
-          email={result.email}
-        />
-      ))}
+      <Table sortedResults={sortedResults}
+      handleSort={() => handleSort}>
+     </Table>
     </div>
   )
 }
