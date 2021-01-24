@@ -2,6 +2,8 @@
 
 ![license badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
+![App screenshot](./react-employee-directoty-screenshot1.png)
+
 React web application that displays 20 random employee in a table using the randomuser.me API. Materialize css is used for styling with gh-pages being used for hosting. Users can sort by email address and filter by location.
     
 - [Installation](#installation)
